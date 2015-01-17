@@ -19,6 +19,13 @@ public class HibernateGreetingDao implements GreetingDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	/**
+	 * This is a new method added to make testing easier!
+	 */
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
 	public List<Greeting> getAllGreetings() {
 		Session session = sessionFactory.getCurrentSession();
 		Query q = session.createQuery("select g from Greeting g order by id desc");

@@ -29,6 +29,14 @@ public class Greeting {
 	@Column(name = "USERNAME")
 	private String username;
 	
+	public Greeting(String greetingText, Date greetingDate, String username) {
+		this.greetingText = greetingText;
+		this.greetingDate = greetingDate;
+		this.username = username;
+	}
+
+	public Greeting() {}
+
 	public String getGreetingText() {
 		return greetingText;
 	}
